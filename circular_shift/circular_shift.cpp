@@ -16,12 +16,20 @@
 std::vector<int> solution(std::vector<int> &A, int K) {
     // simply add the last element in the front and
 	// take out the last
-    while(K)
-    {
-        A.insert(A.begin(),A.back());
-        A.pop_back();
-        K--;
-    }
+	if(!A.empty()) // check if vector is empty
+	{
+	    while(K)
+	    {
+	        A.insert(A.begin(),A.back());
+	        A.pop_back();
+	        K--;
+	    }
+	}
+	else
+	{
+		std::cout << "Vector is empty" << std::endl;
+	}
+
 
     return A;
 }
@@ -29,6 +37,7 @@ std::vector<int> solution(std::vector<int> &A, int K) {
 int main(void)
 {
 	std::vector<int> test_vec{1, 2, 3, 4, 5, 6}; // test vector
+
 	int K = 3; // shift times
 	test_vec = solution(test_vec, K);
 
