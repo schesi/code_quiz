@@ -1,2 +1,2 @@
 # code_quiz
-A bunch of code quiz that I found online
+Various code quizzes that I found online
