@@ -19,19 +19,20 @@ int solution(std::vector<int> &A) {
     // write your code in C++11 (g++ 4.8.2)
     // search for number in the array
     size_t i;
-    int unpair_num = 0;
+    int res = 0;
 
-    for(i = 0; i < A.size(); i++){
-        if(!std::binary_search(A.begin(), A.end(), A[i])) unpair_num = A[i];
+    for(i = 0; i <A.size(); i++){
+    	res^=A[i]; //xor operation
+
     }
 
-    return unpair_num;
+    return res;
 
 }
 
 int main(void)
 {
-	std::vector<int> vec{9, 3, 9, 3, 9, 7, 9};
+	std::vector<int> vec{9, 3, 9, 3, 8, 8, 5, 11, 11, 16, 32, 32, 16};
 
 	std::cout << "The unpaired element is = " << solution(vec) << std::endl;
 	return 0;
